@@ -20,7 +20,7 @@ A lightweight API built with **Elysia** that provides automated video screenshot
    ```bash
    git clone https://github.com/shimizudev/episodes
    cd episodes
-````
+    ```
 
 2. **Install dependencies**
 
